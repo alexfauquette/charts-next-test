@@ -1,5 +1,7 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"
+import Image from "next/image";
+import styles from "./page.module.css";
+import { LineChart } from '@mui/x-charts/LineChart'
 
 export default function Home() {
   return (
@@ -15,7 +17,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -26,6 +28,15 @@ export default function Home() {
             />
           </a>
         </div>
+        <LineChart
+          series={[
+            {
+              data: [1, 2, 4, 3, 1, 2],
+            },
+          ]}
+          width={500}
+          height={300}
+        />
       </div>
 
       <div className={styles.center}>
@@ -91,5 +102,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
